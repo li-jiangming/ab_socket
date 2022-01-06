@@ -8,7 +8,7 @@
 #ifndef AB_SOCKET_H_
 #define AB_SOCKET_H_
 
-#ifdef __cplusplus__
+#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -46,7 +46,7 @@ extern int  ab_socket_reuse_addr(T sock);
 
 #undef T
 
-#ifdef __cplusplus__
+#ifdef __cplusplus
 }
 #endif
 

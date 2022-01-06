@@ -8,7 +8,7 @@
 #ifndef AB_NET_AB_TCP_SERVER_H_
 #define AB_NET_AB_TCP_SERVER_H_
 
-#ifdef __cplusplus__
+#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -24,7 +24,7 @@ extern void ab_tcp_server_free(T *tcp_server);
 
 #undef T
 
-#ifdef __cplusplus__
+#ifdef __cplusplus
 }
 #endif
 
