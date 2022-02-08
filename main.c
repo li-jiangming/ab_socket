@@ -5,7 +5,8 @@
  *      Author: ljm
  */
 
-#include "ab_tcp_server.h"
+#include "ab_net/ab_tcp_server.h"
+#include "ab_net/ab_socket.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -25,7 +26,7 @@ void signal_catch(int signal_num) {
         g_quit = true;
 }
 
-static void accept_cb(ab_socket_t sock, void *user_data) {
+static void accept_cb(void *sock, void *user_data) {
     const unsigned int buf_size = 64;
     char addr_buf[buf_size];
     unsigned short port = 0;

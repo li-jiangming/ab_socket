@@ -1,7 +1,6 @@
 .PHONY: all clean
 
 CC=gcc
-CXX=g++
 
 TARGET=demo
 
@@ -9,19 +8,18 @@ CFLAGS=-I.
 CXXFLAGS=-I.
 LDFLAGS=
 
-SRC=$(wildcard *.c)
+SRC=$(wildcard *.c \
+	ab_base/*.c \
+	ab_net/*.c)
 OBJ=$(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(SRC)))
 
 all:$(TARGET)
 
 $(TARGET):$(OBJ)
-	$(CXX) -o $@ $^ $(LDFLAGS)
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 %.o:%.c
 	$(CC) -c $< -o $@ $(CFLAGS)
-
-%.o:%.cpp
-	$(CXX) -c $< -o $@ $(CXXFLAGS)
 
 clean:
 	rm -f $(TARGET) $(OBJ)
